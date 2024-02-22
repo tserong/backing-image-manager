@@ -30,10 +30,10 @@ type BackingImageStatus struct {
 
 func RPCToBackingImage(obj *rpc.BackingImageResponse) *BackingImage {
 	return &BackingImage{
-		// Note: this is missing VirtualSize
 		Name:             obj.Spec.Name,
 		UUID:             obj.Spec.Uuid,
 		Size:             obj.Spec.Size,
+		VirtualSize:      obj.Spec.VirtualSize,
 		ExpectedChecksum: obj.Spec.Checksum,
 
 		Status: BackingImageStatus{
